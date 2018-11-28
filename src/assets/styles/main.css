@@ -51,7 +51,19 @@ body {
 }
 .searchbar {
     background-color:#1a2533;
+    margin-left: 20%;
     padding: 20px 20px 20px 40px;
+}
+
+.input {
+    background-color: #1a2533;
+    border-color: #ddd;
+    color: #fff;
+}
+
+.input::placeholder {
+    color: #fff;
+    opacity: 0.3;
 }
 
 .list-group {
