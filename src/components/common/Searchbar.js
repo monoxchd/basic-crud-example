@@ -1,7 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { fetchCars } from '../../actions';
 
 class Searchbar extends Component {
+	state = {term: ''};
+
+	onFormSubmit = e => {
+		e.preventDefault();
+		this.props.fetchCars(this.state.term);
+	}
+
 	render() {
 		return (
 			<div className="searchbar">
@@ -12,6 +20,8 @@ class Searchbar extends Component {
 								className="input"
 								type="text"
 								placeholder="Pesquise por um veículo"
+								value={this.state.term}
+								onChange={e => this.setState({term: e.target.value})}
 							/>
 						</div>
 						<div className="control">
@@ -24,10 +34,7 @@ class Searchbar extends Component {
 	}
 }
 
-const mapStateToProps = state => {
-	return { cars: state.cars };
-};
-
 export default connect(
-	mapStateToProps
+	null,
+	{ fetchCars }
 )(Searchbar);

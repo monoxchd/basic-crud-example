@@ -38,6 +38,8 @@ body {
 .main {
     background: #1f2d40 url('../img/car-wireframe.png') no-repeat;
     background-position: center;
+    margin-left: 20%;
+    min-height: 600px;
 }
 .banner { 
     font-family: 'Lobster Two', cursive;
