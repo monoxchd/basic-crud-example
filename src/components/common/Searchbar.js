@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchCars } from '../../actions';
 
@@ -25,7 +26,7 @@ class Searchbar extends Component {
 							/>
 						</div>
 						<div className="control">
-							<button className="button">Cadastrar</button>
+							<Link to="/cars/new"><button className="button">Cadastrar</button></Link>
 						</div>
 					</div>
 				</form>
