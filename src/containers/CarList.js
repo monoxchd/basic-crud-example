@@ -6,7 +6,6 @@ import CarDisplay from '../components/cars/CarDisplay';
 
 class CarList extends Component {
 	render() {
-		console.log(this.props.cars);
 		if (this.props.cars.length === 0){
 			return <div className=""><p className="banner">Pesquisa de veículos do <span>TradersClub</span></p></div>;
 		} else {

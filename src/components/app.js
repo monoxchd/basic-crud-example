@@ -16,6 +16,7 @@ export default class App extends Component {
 					<div className="main">
 						<Route path="/" exact component={CarList} />
 						<Route path="/cars/new" component={CarCreate} />
+						<Route path="/cars/edit/:id" component={CarCreate} />
 					</div>
 				</div>
 			</Router>

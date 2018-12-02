@@ -13,10 +13,10 @@ class Searchbar extends Component {
 
 	render() {
 		return (
-			<div className="searchbar">
-				<form onSubmit={this.onFormSubmit}>
-					<div className="field is-grouped">
-						<div className="control is-expanded">
+			<div className="searchbar">	
+				<div className="field is-grouped">
+					<div className="control is-expanded">
+						<form onSubmit={this.onFormSubmit}>
 							<input
 								className="input"
 								type="text"
@@ -24,12 +24,12 @@ class Searchbar extends Component {
 								value={this.state.term}
 								onChange={e => this.setState({term: e.target.value})}
 							/>
-						</div>
-						<div className="control">
-							<Link to="/cars/new"><button className="button">Cadastrar</button></Link>
-						</div>
+						</form>
 					</div>
-				</form>
+					<div className="control">
+						<Link to="/cars/new"><button className="button">Cadastrar</button></Link>
+					</div>
+				</div>	
 			</div>
 		);
 	}

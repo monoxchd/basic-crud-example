@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
-import { createCar } from '../actions';
+import { createCar, editCar, allCars } from '../actions';
 
 class CarCreate extends Component {
+	componentWillMount() {
+		console.log(this.props);
+		this.props.allCars();
+	}
+
 	renderError({ error, touched }) {
 		if (touched && error) {
 			return (
@@ -26,7 +31,7 @@ class CarCreate extends Component {
 	onSubmit = formValues => {
 		const submit = {};
 		submit.car = formValues;
-		this.props.createCar(submit);
+		this.props.match.path === "/cars/new" ? this.props.createCar(submit) : this.props.editCar(submit);
 	}
 
 	render() {
@@ -95,7 +100,14 @@ const formWrapped = reduxForm({
 	validate
 })(CarCreate);
 
+const mapStateToProps = ({ cars }, ownProps) => {
+	return { 
+		cars,
+		initialValues: cars[parseInt(ownProps.match.params.id)]
+	};
+}
+
 export default connect(
-	null,
-	{ createCar }
+	mapStateToProps,
+	{ createCar, editCar, allCars }
 )(formWrapped);
