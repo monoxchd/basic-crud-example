@@ -5,14 +5,14 @@ import { createCar, editCar, allCars } from '../actions';
 
 class CarCreate extends Component {
 	componentWillMount() {
-		console.log(this.props);
 		this.props.allCars();
 	}
 
 	renderError({ error, touched }) {
 		if (touched && error) {
 			return (
-				<div>
+				<div className="notification">
+					<button className="delete"></button>
 					<div>{ error }</div>
 				</div>
 			);
@@ -20,9 +20,10 @@ class CarCreate extends Component {
 	}
 
 	renderInput = ({ input, label, type, meta }) => {
+		console.log(meta);
 		return (
 			<div>
-				<input className="input" {...input} placeholder={label} type={type} />
+				<input className="car-input input" {...input} placeholder={label} type={type} />
 				{ this.renderError(meta) }
 			</div>
 		);
@@ -37,41 +38,41 @@ class CarCreate extends Component {
 	render() {
 		return (
 			<div className="container">
-				<form onSubmit={this.props.handleSubmit(this.onSubmit)}>
+				<form className="car-form" onSubmit={this.props.handleSubmit(this.onSubmit)}>
 					<div className="field">
-						<p className="control">
+						<div className="control">
 							<Field name="title" component={this.renderInput} label="Título do anúncio" type="text" />
-						</p>
+						</div>
 					</div>
 					
 					<div className="field is-grouped">
-						<p className="control is-expanded">
+						<div className="control is-expanded">
 							<Field name="model" component={this.renderInput} label="Modelo" type="text" />
-						</p>
-						<p className="control is-expanded">
+						</div>
+						<div className="control is-expanded">
 							<Field name="year" component={this.renderInput} label="Ano" type="text" />
-						</p>
+						</div>
 					</div>
 					
 					<div className="field">
-						<p className="control">
+						<div className="control">
 							<Field name="brand" component={this.renderInput} label="Marca" type="text" />
-						</p>
+						</div>
 					</div>
 					
 					<div className="field is-grouped">
-						<p className="control is-expanded">
+						<div className="control is-expanded">
 							<Field name="color" component={this.renderInput} label="Cor" type="text" />
-						</p>
-						<p className="control is-expanded">
+						</div>
+						<div className="control is-expanded">
 							<Field name="price" component={this.renderInput} label="Preço" type="text" />
-						</p>
+						</div>
 					</div>
 					
 					<div className="field is-narrow">
-						<p className="control">
+						<div className="control">
 							<Field name="km" component={this.renderInput} label="KM" type="text" />
-						</p>
+						</div>
 					</div>
 					
 					<button className="button">Salvar</button>

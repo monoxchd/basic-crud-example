@@ -28,6 +28,7 @@ body {
     width: 20%;
     z-index: 1;
 }
+
 .menu h1 {
     display:inline-block;
     background: url('../img/logo-tc.png') no-repeat;
@@ -35,12 +36,14 @@ body {
     height:80px;
     text-indent:-999em;
 }
+
 .main {
     background: #1f2d40 url('../img/car-wireframe.png') no-repeat;
     background-position: center;
     margin-left: 20%;
     min-height: 600px;
 }
+
 .banner { 
     font-family: 'Lobster Two', cursive;
     font-size: 100px;
@@ -48,9 +51,11 @@ body {
     padding-top: 40px;
     padding-right: 60px;
 }
+
 .banner span {
     background-color: #2d4769;
 }
+
 .searchbar {
     background-color:#1a2533;
     margin-left: 20%;
@@ -68,16 +73,27 @@ body {
     opacity: 0.3;
 }
 
+.input:focus {
+    border-color: #ddd;
+}
+
 .list-group {
     padding: 20px 40px;
 }
 
+.list-group a {
+    color: #fff;
+}
+
 .list-group-item {
     background-color: transparent;
+    padding: 20px 10px;
 }
 
 .list-group-item:hover {
     background-color: #374354;
+    opacity: 0.8;
+
 }
 
 .list-group-item p {
@@ -86,4 +102,28 @@ body {
 
 .list-group-item span {
     float: right;
+}
+
+.car-form {
+    padding-top: 60px;
+}
+
+.car-form .field {
+    margin-bottom: 40px;
+}
+
+.car-input {
+    background-color: transparent;
+    border-color: #ddd;
+    color: #fff;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-radius: 0px;
+}
+
+.car-input:focus {
+    box-shadow: #ddd 0px 1px 2px 0px inset;
+    background-color: #1a2533;
+    opacity: 1;
 }
